@@ -1,0 +1,40 @@
+  query getSingleCourse($CourseID: Int!){
+    course(id: $CourseID){
+      title
+      author
+      description
+      topic
+      url
+    }
+  }
+
+  query getCoursesForTopic($CourseTopic: String!){
+    courses(topic: $CourseTopic){
+      title
+      author
+      description
+      topic
+      url
+    }
+  }
+
+
+
+//with fragments
+
+query getCoursesWithFragments($CourseID1: Int!, $CourseID2: Int!) {
+  course1: course(id: $CourseID1) {
+    ...courseFields
+  }
+  course2: course(id: $CourseID2) {
+    ...courseFields
+  }
+}
+
+fragment courseFields on Course {
+  title
+  author
+  description
+  topic
+  url
+}
