@@ -8,10 +8,12 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 //import { ListComponent } from './list/list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
